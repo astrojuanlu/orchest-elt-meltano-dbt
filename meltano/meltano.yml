@@ -1,0 +1,40 @@
+version: 1
+default_environment: dev
+environments:
+- name: dev
+  config:
+    plugins:
+      extractors:
+      - name: tap-postgres
+        select:
+        - public-names_us.*
+- name: staging
+- name: prod
+project_id: ac1501cc-70d3-4ed5-9d0b-666b4821b44a
+plugins:
+  extractors:
+  - name: tap-postgres
+    variant: transferwise
+    pip_url: pipelinewise-tap-postgres
+    config:
+      host: postgres-21e3f45c-f2d7-4c2618a0897d-f7cb-48b1
+      user: postgres
+      dbname: postgres
+    metadata:
+      '*':
+        replication-method: FULL_TABLE
+  loaders:
+  - name: target-bigquery
+    variant: adswerve
+    pip_url: git+https://github.com/adswerve/target-bigquery.git@0.12.0
+    config:
+      project_id: elt-orchest-meltano-dbt
+      dataset_id: names_us
+      location: US
+  transformers:
+  - name: dbt-bigquery
+    variant: dbt-labs
+    pip_url: dbt-core~=1.1.0 dbt-bigquery~=1.1.0
+    config:
+      project: elt-orchest-meltano-dbt
+      dataset: names_us

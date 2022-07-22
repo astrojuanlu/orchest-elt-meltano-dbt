@@ -1,0 +1,113 @@
+{
+    "name": "Main",
+    "parameters": {},
+    "services": {
+        "postgres": {
+            "env_variables": {
+                "POSTGRES_HOST_AUTH_METHOD": "trust"
+            },
+            "exposed": false,
+            "image": "postgres",
+            "name": "postgres",
+            "order": 229,
+            "ports": [
+                5432
+            ],
+            "requires_authentication": true,
+            "scope": [
+                "interactive",
+                "noninteractive"
+            ]
+        }
+    },
+    "settings": {
+        "auto_eviction": false,
+        "data_passing_memory_size": "1GB"
+    },
+    "steps": {
+        "24251777-78a5-4adb-99d3-208296a975c9": {
+            "environment": "4e279dc9-901e-4ec9-a20a-86ce342bc3a4",
+            "file_path": "transform.sh",
+            "incoming_connections": [
+                "2f7531fc-0579-4b8c-90ce-e3b0f2c3b890"
+            ],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    810.5,
+                    80
+                ]
+            },
+            "parameters": {},
+            "title": "Transform",
+            "uuid": "24251777-78a5-4adb-99d3-208296a975c9"
+        },
+        "2f7531fc-0579-4b8c-90ce-e3b0f2c3b890": {
+            "environment": "4e279dc9-901e-4ec9-a20a-86ce342bc3a4",
+            "file_path": "extract-load.sh",
+            "incoming_connections": [
+                "6f54b755-52f0-4a3e-b4a5-2f393607c36f"
+            ],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    547,
+                    80.00000000000001
+                ]
+            },
+            "parameters": {},
+            "title": "Extract & Load",
+            "uuid": "2f7531fc-0579-4b8c-90ce-e3b0f2c3b890"
+        },
+        "593fabdb-7afb-4b49-8f5a-dcd69cc7d0c5": {
+            "environment": "4e279dc9-901e-4ec9-a20a-86ce342bc3a4",
+            "file_path": "populate.ipynb",
+            "incoming_connections": [],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    20,
+                    80.00000000000004
+                ]
+            },
+            "parameters": {},
+            "title": "Populate source database",
+            "uuid": "593fabdb-7afb-4b49-8f5a-dcd69cc7d0c5"
+        },
+        "6f54b755-52f0-4a3e-b4a5-2f393607c36f": {
+            "environment": "4e279dc9-901e-4ec9-a20a-86ce342bc3a4",
+            "file_path": "setup.sh",
+            "incoming_connections": [
+                "593fabdb-7afb-4b49-8f5a-dcd69cc7d0c5"
+            ],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    283.5,
+                    80.00000000000003
+                ]
+            },
+            "parameters": {},
+            "title": "Setup",
+            "uuid": "6f54b755-52f0-4a3e-b4a5-2f393607c36f"
+        }
+    },
+    "uuid": "18a0897d-f7cb-48b1-a00c-23b727d0e839",
+    "version": "1.2.1"
+}

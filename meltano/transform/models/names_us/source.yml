@@ -1,0 +1,7 @@
+config-version: 2
+version: 2
+sources:
+  - name: names_us
+    schema: public
+    tables:
+      - name: names_us

@@ -1,0 +1,5 @@
+meltano==2.3.0
+
+ipython-sql
+pandas
+werkzeug<2.2  # https://github.com/pallets/werkzeug/issues/2464
