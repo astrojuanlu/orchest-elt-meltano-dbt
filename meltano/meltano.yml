@@ -38,3 +38,4 @@ plugins:
     config:
       project: elt-orchest-meltano-dbt
       dataset: names_us
+      profiles_dir: $MELTANO_PROJECT_ROOT/transform/profile

@@ -1,0 +1,7 @@
+config-version: 2
+version: 2
+sources:
+  - name: tap-postgres
+    schema: names_us
+    tables:
+      - name: public-names_us
