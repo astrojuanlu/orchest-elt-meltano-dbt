@@ -9,7 +9,7 @@
             "exposed": false,
             "image": "postgres",
             "name": "postgres",
-            "order": 229,
+            "order": 267,
             "ports": [
                 5432
             ],
@@ -38,7 +38,7 @@
             "meta_data": {
                 "hidden": false,
                 "position": [
-                    810.5,
+                    1074,
                     80
                 ]
             },
@@ -59,7 +59,7 @@
             "meta_data": {
                 "hidden": false,
                 "position": [
-                    547,
+                    810.5,
                     80.00000000000001
                 ]
             },
@@ -70,7 +70,9 @@
         "593fabdb-7afb-4b49-8f5a-dcd69cc7d0c5": {
             "environment": "4e279dc9-901e-4ec9-a20a-86ce342bc3a4",
             "file_path": "populate.ipynb",
-            "incoming_connections": [],
+            "incoming_connections": [
+                "e29b73bb-daf9-40a5-8418-ed03661a070f"
+            ],
             "kernel": {
                 "display_name": "Python 3",
                 "name": "python"
@@ -78,7 +80,7 @@
             "meta_data": {
                 "hidden": false,
                 "position": [
-                    20,
+                    283.5,
                     80.00000000000004
                 ]
             },
@@ -99,13 +101,32 @@
             "meta_data": {
                 "hidden": false,
                 "position": [
-                    283.5,
+                    547,
                     80.00000000000003
                 ]
             },
             "parameters": {},
             "title": "Setup",
             "uuid": "6f54b755-52f0-4a3e-b4a5-2f393607c36f"
+        },
+        "e29b73bb-daf9-40a5-8418-ed03661a070f": {
+            "environment": "4e279dc9-901e-4ec9-a20a-86ce342bc3a4",
+            "file_path": "check_environment_variables.sh",
+            "incoming_connections": [],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    20,
+                    80.00000000000004
+                ]
+            },
+            "parameters": {},
+            "title": "Check environment variables",
+            "uuid": "e29b73bb-daf9-40a5-8418-ed03661a070f"
         }
     },
     "uuid": "18a0897d-f7cb-48b1-a00c-23b727d0e839",

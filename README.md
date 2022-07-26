@@ -7,7 +7,13 @@ using meltano and dbt.
 
 ![Pipeline visualization](https://pviz.orchest.io/?pipeline=https://github.com/astrojuanlu/orchest-elt-meltano-dbt/blob/main/main.orchest)
 
-## Init commands
+## Credentials
+
+To make the main pipeline work, you need a `GOOGLE_APPLICATION_CREDENTIALS` environment variable pointing to a path containing a JSON key with BigQuery credentials (see [instructions](https://github.com/adswerve/target-bigquery#step-2-authenticate-with-a-service-account)).
+
+## Development
+
+### Init commands
 
 These commands were used to create the configuration file,
 using the Jupyter Console. There is no need to run them again.
