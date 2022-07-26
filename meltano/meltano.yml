@@ -20,6 +20,7 @@ plugins:
       host: postgres-21e3f45c-f2d7-4c2618a0897d-f7cb-48b1
       user: postgres
       dbname: postgres
+      password: ''
     metadata:
       '*':
         replication-method: FULL_TABLE

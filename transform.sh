@@ -9,7 +9,7 @@ pushd meltano || exit
 export DBT_TARGET=bigquery
 export TARGET_BIGQUERY_PROJECT_ID=elt-orchest-meltano-dbt
 export DBT_TARGET_SCHEMA=names_us
-export TARGET_BIGQUERY_CREDENTIALS_PATH=/project-dir/meltano/client_secrets.json
+export TARGET_BIGQUERY_CREDENTIALS_PATH=$GOOGLE_APPLICATION_CREDENTIALS
 export TARGET_BIGQUERY_LOCATION=US
 
 meltano invoke dbt-bigquery:run
